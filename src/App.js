@@ -1,5 +1,6 @@
+// App.js or where your routing is defined
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -9,6 +10,7 @@ import Restaurants from './components/Restaurants';
 import BookReservationForm from './components/BookReservationForm';
 import Reservation from './components/Reservation';
 import EditReservation from './components/EditReservation';
+import Auth from './components/Login';
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
             <Route path="/book" element={<BookReservationForm />} />
             <Route path="/Reservation/:id" element={<Reservation />} />
             <Route path="/Edit/:id" element={<EditReservation />} />
+            <Route path="/login" element={<Auth />} />
           </Routes>
         </main>
         <Footer />

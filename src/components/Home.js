@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaClock, FaStar, FaGift, FaCog, FaSearch, FaCalendarAlt, FaCheck, FaUtensils, FaArrowRight  } from 'react-icons/fa';
+import { FaClock, FaStar, FaGift, FaCog, FaSearch, FaCalendarAlt, FaCheck, FaUtensils, FaArrowRight } from 'react-icons/fa';
 import backgroundImage from '../assets/images/Cover.png';
 import goToAppAward from '../assets/images/Go-to-app.png';
 import foodIndustryAward from '../assets/images/Foodindustryinnovation.png';
 import './Home.css';
-
 
 const HomePage = () => {
   const [bookingCount, setBookingCount] = useState(1500);
@@ -13,12 +12,11 @@ const HomePage = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const testimonials = [
-    { quote: "Using PlatePal has been a game-changer for our date nights. The ease of booking and the special perks for members have made dining out enjoyable and stress-free!” ", author: "Halley" },
+    { quote: "Using PlatePal has been a game-changer for our date nights. The ease of booking and the special perks for members have made dining out enjoyable and stress-free!", author: "Halley" },
     { quote: "PlatePal made our anniversary dinner so special. We got the best table without any hassle!", author: "Sarah Mungai" },
     { quote: "I've been using PlatePal for several months now, and it's the best way to book restaurants in the city. Highly recommended!", author: "John" },
-    { quote: "PlatePal made booking dinner so effortless! I love how I can browse through top restaurants and secure a table in just a few taps. It’s my go-to app for dining out!”", author: "John " },
-    { quote: "PlatePal made booking dinner so effortless! I love how I can browse through top restaurants and secure a table in just a few taps. It’s my go-to app for dining out!”", author: "John " },
-    
+    { quote: "PlatePal made booking dinner so effortless! I love how I can browse through top restaurants and secure a table in just a few taps. It’s my go-to app for dining out!", author: "John" },
+    { quote: "PlatePal made booking dinner so effortless! I love how I can browse through top restaurants and secure a table in just a few taps. It’s my go-to app for dining out!", author: "John" },
   ];
 
   useEffect(() => {
@@ -48,12 +46,10 @@ const HomePage = () => {
       clearInterval(greetingInterval);
       clearInterval(testimonialInterval);
     };
-  }, []);
+  }, [testimonials.length]); // Include testimonials.length in the dependency array
 
   return (
     <div className="home-page">
-
-
       {/* Hero section */}
       <div className="hero-section">
         <div className="hero-grid">
@@ -94,8 +90,7 @@ const HomePage = () => {
         </div>
       </div>
 
-{/* Hero section 2 */}
-
+      {/* Hero section 2 */}
       <section className="how-it-works">
         <h2>Simple Steps to Your Next Great Meal</h2>
         <ol>
@@ -117,18 +112,18 @@ const HomePage = () => {
           </li>
         </ol>
       </section>
-      
+
       <section className="featured-restaurants">
-  <div className="featured-card">
-    <FaUtensils className="featured-icon" />
-    <h2>Explore Local Favorites</h2>
-    <p>From cozy cafes to fine dining, find the perfect spot for any occasion</p>
-    <Link to="/restaurants" className="view-all-btn">
-      View All Restaurants
-      <FaArrowRight className="arrow-icon" />
-    </Link>
-  </div>
-</section>
+        <div className="featured-card">
+          <FaUtensils className="featured-icon" />
+          <h2>Explore Local Favorites</h2>
+          <p>From cozy cafes to fine dining, find the perfect spot for any occasion</p>
+          <Link to="/restaurants" className="view-all-btn">
+            View All Restaurants
+            <FaArrowRight className="arrow-icon" />
+          </Link>
+        </div>
+      </section>
 
       <section className="testimonial">
         <h2>What Our Users Say</h2>
@@ -143,35 +138,31 @@ const HomePage = () => {
       <section className="special-offer">
         <h2>New to PlatePal?</h2>
         <p>Enjoy 20% off your first reservation</p>
-        {/* <button className="cta-button"></button> */}
         <Link to="/book" className="cta-button">Claim Offer</Link>
       </section>
 
-{/* Trust Indicators section */}
+      {/* Trust Indicators section */}
+      <section className="trust-indicators">
+        <h2 className="trust-indicators-heading">Award-Winning Excellence</h2>
+        <div className="awards-container">
+          <div className="award">
+            <img src={goToAppAward} alt="Food Magazine Award" className="award-badge" />
+            <p>The Go-To Restaurant Reservation App</p>
+            <span className="award-year">2021</span>
+          </div>
+          <div className="award">
+            <img src={foodIndustryAward} alt="Best Food Industry Innovation Award" className="award-badge" />
+            <p>Best Food Industry Innovation</p>
+            <span className="award-year">2023</span>
+          </div>
+        </div>
+        <div className="additional-trust">
+          <p><strong>Trusted by over 1000 diners</strong></p>
+          <p><strong> Exclusive partnerships with over 500 top-rated restaurants </strong></p>
+        </div>
+      </section>
 
-
-<section className="trust-indicators">
-  <h2 className="trust-indicators-heading">Award-Winning Excellence</h2>
-  <div className="awards-container">
-    <div className="award">
-    <img src={goToAppAward} alt="Food Magazine Award" className="award-badge" />
-      <p>The Go-To Restaurant Reservation App</p>
-      <span className="award-year">2021</span>
-    </div>
-    <div className="award">
-    <img src={foodIndustryAward} alt="Best Food Industry Innovation Award" className="award-badge" />
-      <p>Best Food Industry Innovation</p>
-      <span className="award-year">2023</span>
-    </div>
-  </div>
-  <div className="additional-trust">
-    <p><strong>Trusted by over 1000 diners</strong></p>
-    <p><strong> Exclusive partnerships with over 500 top-rated restaurants </strong></p>
-  </div>
-</section>
-
-{/* Final cta section */}
-
+      {/* Final cta section */}
       <section className="final-cta">
         <h2>Ready for your next unforgettable dining experience?</h2>
         <Link to="/book" className="cta-button">Book Your Table Now</Link>
