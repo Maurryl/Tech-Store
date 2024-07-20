@@ -72,7 +72,7 @@ const Contact = () => {
           <h2>Contact Information</h2>
           <p className='contact-headers'><strong>Address:</strong> 123 PlatePal St, Food City, FC 12345</p>
           <p className='contact-headers'><strong>Phone:</strong> (123) 456-7890</p>
-          <p className='contact-headers'><strong>Email:</strong> info@eateryease.com</p>
+          <p className='contact-headers'><strong>Email:</strong> info@techmart.com</p>
           <p className=''><strong>Hours:</strong> Mon-Fri: 8am-5pm</p>
         </div>
       </div>
