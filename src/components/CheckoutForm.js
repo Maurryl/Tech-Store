@@ -61,11 +61,11 @@ const CheckoutForm = () => {
             name: formData.name,
             email: formData.email,
             address: formData.address,
-            total_price: String(totalPrice),  // Ensure this is a string
+            total_price: String(totalPrice),  
             payment_method: paymentMethod,
             items: cartItems.map((item) => ({
                 name: item.name,
-                price: item.price.toString().replace(',', ''),  // Remove commas before sending
+                price: item.price.toString().replace(',', ''),  
                 quantity: item.quantity || 1,
                 description: item.description,
             })),
