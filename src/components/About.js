@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUtensils, FaHeart, FaSmile } from 'react-icons/fa';
+import { FaLaptop, FaMobileAlt, FaHeadphones } from 'react-icons/fa';
 import './About.css';
 
 const AboutPage = () => {
@@ -8,30 +8,30 @@ const AboutPage = () => {
     <div className="about-page">
       <div className="about-section">
         <h2 className="about-title">Our Story</h2>
-        <p className="about-text">PlatePal was founded on the idea that sharing a meal with others is one of life's greatest pleasures. Our team of foodies and tech enthusiasts came together to create a platform that makes it easy for people to discover and book tables at their favorite restaurants.</p>
-        <p className="about-text">We believe that dining out should be a seamless and enjoyable experience, which is why we're dedicated to providing a user-friendly platform that connects diners with top-rated restaurants.</p>
+        <p className="about-text">TechMarz was founded on the idea that technology can enhance our lives in incredible ways. Our team of tech enthusiasts came together to create a platform that makes it easy for people to discover and purchase the latest tech gadgets and innovations.</p>
+        <p className="about-text">We believe that exploring new technology should be a seamless and exciting experience, which is why we're dedicated to providing a user-friendly platform that connects tech lovers with cutting-edge products.</p>
       </div>
 
       <div className="mission-section">
         <h2 className="mission-title">Our Mission</h2>
         <div className="mission-grid">
           <div className="mission-item">
-            <FaUtensils className="mission-icon" />
-            <h3 className="mission-title">Delicious Experiences</h3>
-            <img src="https://i.pinimg.com/236x/b5/4d/97/b54d9719620ddd06547b50a6d2e09c02.jpg" alt="Set dining table" className="mission-image" />
-            <p className="mission-text">We're passionate about helping people discover new flavors and create unforgettable dining experiences.</p>
+            <FaLaptop className="mission-icon" />
+            <h3 className="mission-title">Innovative Technology</h3>
+            <img src="https://wallpapers.com/laptop" alt="Laptop" className="mission-image" />
+            <p className="mission-text">We're passionate about helping people discover the latest tech innovations and creating exceptional experiences with new gadgets.</p>
           </div>
           <div className="mission-item">
-            <FaHeart className="mission-icon" />
-            <h3 className="mission-title">Community Building</h3>
-            <img src="https://i.pinimg.com/236x/75/4e/80/754e8033443f2aaf4dec1b5710704066.jpg" alt="Group dining" className="mission-image" />
-            <p className="mission-text">We believe that sharing a meal with others is a powerful way to build connections and foster community.</p>
+            <FaMobileAlt className="mission-icon" />
+            <h3 className="mission-title">Tech for Everyone</h3>
+            <img src="https://i.pinimg.com/236x/51/a4/29/51a429c0efdf8b9b5c816d93efb4cf51.jpg" alt="Mobile phone" className="mission-image" />
+            <p className="mission-text">We believe that technology should be accessible to everyone, and we strive to provide a range of products to meet diverse needs.</p>
           </div>
           <div className="mission-item">
-            <FaSmile className="mission-icon" />
+            <FaHeadphones className="mission-icon" />
             <h3 className="mission-title">Exceptional Service</h3>
-            <img src="https://i.pinimg.com/474x/3f/3c/27/3f3c2791b6dd3c2557f9461742aa4f58.jpg" alt="Happy waitress" className="mission-image" />
-            <p className="mission-text">We're committed to providing exceptional customer service and ensuring that every interaction with PlatePal is a positive one.</p>
+            <img src="https://i.pinimg.com/474x/7c/3e/5e/7c3e5e02c77e1c9fc56e50a2040488b1.jpg" alt="Headphones" className="mission-image" />
+            <p className="mission-text">We're committed to providing exceptional customer service and ensuring that every interaction with TechMarz is a positive one.</p>
           </div>
         </div>
       </div>
@@ -58,8 +58,8 @@ const AboutPage = () => {
       </div>
 
       <div className="call-to-action">
-        <Link to="/restaurants" className="cta-button">Find a Table</Link>
-        <p className="cta-text">Ready to start dining with PlatePal? Browse our selection of top-rated restaurants and book a table today!</p>
+        <Link to="/tech-items" className="cta-button">Explore Tech Items</Link>
+        <p className="cta-text">Ready to dive into the world of tech? Browse our selection of the latest gadgets and innovations and find your next favorite device today!</p>
       </div>
     </div>
   );

@@ -20,12 +20,12 @@
 
 .footer-section {
   flex: 1;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   min-width: 200px;
 }
 
 .footer-section h3 {
-  color: #FF6B35;
+  color: #2b0692;
   margin-bottom: 1rem;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .footer-section.links a:hover {
-  color: #FF6B35;
+  color: #0d0c66;
 }
 
 .footer-section.contact p {
@@ -59,7 +59,7 @@
 
 .footer-section.contact i {
   margin-right: 0.5rem;
-  color: #FF6B35;
+  color: #160f83;
 }
 
 .footer-bottom {

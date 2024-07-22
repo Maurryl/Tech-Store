@@ -1,0 +1,23 @@
+.admin-sales-container {
+    margin: 20px;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sales-table th,
+.sales-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.sales-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.error-message {
+    color: red;
+}

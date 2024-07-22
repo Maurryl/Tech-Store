@@ -1,51 +1,64 @@
 import React, { useState } from 'react';
-import './Footer.css';
-import './Auth.css';
+import './Footer.css'; // Assuming this is your styling for other parts of the app
+import './Auth.css'; // Assuming this is styling specific to authentication
 
 function Auth({ setUser, setIsAuthenticated }) {
     const [isRegistering, setIsRegistering] = useState(false);
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [welcomeMessage, setWelcomeMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [error, setError] = useState('');
 
     const handleAuth = async (e) => {
         e.preventDefault();
-        const endpoint = isRegistering ? 'http://localhost:5555/register' : 'http://localhost:5555/login';
+        setError('');
+        setSuccessMessage('');
+
         try {
-            const response = await fetch(endpoint, {
+            const response = await fetch(`http://localhost:5555/auth/${isRegistering ? 'register' : 'login'}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify(isRegistering ? { username, email, password } : { email, password }),
+                credentials: 'include',
             });
-            const data = await response.json();
-            if (response.ok) {
-                if (isRegistering) {
-                    setIsRegistering(false); // Switch to login form after registration
-                    alert('Registration successful! Please log in.');
-                } else {
-                    localStorage.setItem('token', data.access_token);
-                    setUser({ username: data.username });
-                    setIsAuthenticated(true);
-                    setWelcomeMessage(`Welcome ${data.username}!`);
-                    setTimeout(() => {
-                        window.location.href = '/reviews';
-                    }, 2000); // Redirect to reviews after 2 seconds
-                }
-            } else {
-                setErrorMessage(data.error || 'An error occurred');
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                setError(errorData.error || 'Something went wrong');
+                return;
             }
-        } catch (error) {
-            console.error(error);
-            setErrorMessage('An error occurred');
+
+            const data = await response.json();
+            console.log(`${isRegistering ? 'Registration' : 'Login'} successful:`, data);
+
+            setSuccessMessage(isRegistering ? 'Registration successful!' : 'Login successful!');
+            setErrorMessage('');
+
+            // Handle success (e.g., store the token, redirect, etc.)
+            if (!isRegistering) {
+                localStorage.setItem('token', data.access_token);
+                setUser({ email });
+                setIsAuthenticated(true);
+            }
+        } catch (err) {
+            setError('Network error: ' + err.message);
         }
     };
 
     const toggleAuthMode = () => {
         setIsRegistering(!isRegistering);
-        setErrorMessage(''); // Clear any previous error messages
+        setErrorMessage('');
+        setSuccessMessage('');
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        setUser(null);
+        setIsAuthenticated(false);
     };
 
     return (
@@ -53,29 +66,60 @@ function Auth({ setUser, setIsAuthenticated }) {
             <div className="auth-wrapper">
                 <h2>{isRegistering ? 'Register' : 'Login'}</h2>
                 <form onSubmit={handleAuth}>
+                    {isRegistering && (
+                        <div>
+                            <label>Username:</label>
+                            <input
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+                    )}
                     <div>
-                        <label>Username:</label>
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <label>Email:</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
                     </div>
                     <div>
                         <label>Password:</label>
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
                     </div>
-                    <button type="submit">{isRegistering ? 'Register' : 'Login'}</button>
+                    <button type="submit" className="auth-button">{isRegistering ? 'Register' : 'Login'}</button>
                 </form>
+                {successMessage && <p className="success-message">{successMessage}</p>}
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
-                {welcomeMessage && <p className="welcome-message">{welcomeMessage}</p>}
+                {error && <div style={{ color: 'red' }}>{error}</div>}
                 <p>
                     {isRegistering ? (
                         <>
-                            Already have an account? <button className="auth-button" onClick={toggleAuthMode}>Login here</button>
+                            Already have an account?{' '}
+                            <button className="auth-button" onClick={toggleAuthMode}>
+                                Login here
+                            </button>
                         </>
                     ) : (
                         <>
-                            Don't have an account? <a href="#!" className="auth-link" onClick={toggleAuthMode}>Sign Up here</a>
+                            Don't have an account?{' '}
+                            <button className="auth-button" onClick={toggleAuthMode}>
+                                Sign Up here
+                            </button>
                         </>
                     )}
                 </p>
+                {localStorage.getItem('token') && (
+                    <button onClick={handleLogout} className="auth-button">Logout</button>
+                )}
             </div>
         </div>
     );

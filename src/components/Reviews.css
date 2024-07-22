@@ -1,0 +1,123 @@
+.reviews {
+    padding: 20px;
+}
+
+.success-message,
+.error-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+.review-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.reviews-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.reviews-modal .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.reviews-modal .reviews {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.reviews {
+    padding: 20px;
+}
+
+.reviews h2 {
+    margin-bottom: 10px;
+}
+
+.success-message,
+.error-message {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: #2e7d32;
+}
+
+.error-message {
+    color: #d32f2f;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.review-button[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.review-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    margin-bottom: 10px;
+}
+
+.review-item p {
+    margin: 5px 0;
+}
