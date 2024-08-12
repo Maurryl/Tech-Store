@@ -1,0 +1,66 @@
+.seller-login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #E7D4B5;
+
+}
+
+.seller-login-form {
+    background-color: #F6E6CB;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 20px 40px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.seller-login-form h1 {
+    font-size: 24px;
+    color: #A0937D;
+}
+
+.seller-login-form span {
+    display: block;
+    margin-bottom: 15px;
+    color: #000000;
+
+}
+
+.seller-login-form input {
+    background-color: #EEE;
+    color: #333;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.seller-login-form button {
+    background-color: #A0937D;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.seller-login-form button:hover {
+    background-color: #8c7b5a;
+   
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+}

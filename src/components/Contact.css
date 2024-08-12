@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Merriweather&display=swap');
 
+/* Vintage Colors */
+:root {
+  --vintage-dark: #A0937D;
+  --vintage-medium: #E7D4B5;
+  --vintage-light: #F6E6CB;
+  --vintage-accent: #B6C7AA;
+  --vintage-text: #333;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  background-color: var(--vintage-light);
+  color: var(--vintage-text);
+}
+
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   padding-bottom: 10rem;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 4rem;
 }
 
 .contact-container h1 {
+  margin-top: 40px;
   text-align: center;
-  color: #333;
+  color: var(--vintage-dark);
   margin-bottom: 2rem;
 }
 
@@ -24,15 +40,16 @@
 .contact-form,
 .contact-info {
   flex: 1;
-  background-color: #f9f9f9;
+  background-color: var(--vintage-medium);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Darker box-shadow */
 }
 
 .contact-form h2,
 .contact-info h2 {
-  color: #0f1183;
+  color: var(--vintage-dark);
   margin-bottom: 1.5rem;
 }
 
@@ -43,18 +60,17 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-
-
-
+  color: var(--vintage-dark);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--vintage-dark);
   border-radius: 4px;
   font-size: 1rem;
+  background-color: var(--vintage-light);
 }
 
 .form-group textarea {
@@ -63,7 +79,7 @@
 }
 
 .submit-btn1 {
-  background-color: #091f68;
+  background-color: var(--vintage-dark);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -71,27 +87,56 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-family: Roboto;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .submit-btn1:hover {
-  background-color: #3b46aa;
+  background-color: var(--vintage-accent);
 }
 
 .contact-info p {
   margin-bottom: 1rem;
-  color: #555;
+  color: var(--vintage-text);
 }
 
 .contact-headers {
   font-size: 1.2rem;
-  color: #000000;
+  color: var(--vintage-dark);
 }
-
-
 
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
   }
+}
+
+.reviews-section {
+  margin-top: 4rem;
+  background-color: var(--vintage-medium);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* Darker box-shadow */
+}
+
+.reviews-section h2 {
+  color: var(--vintage-dark);
+  margin-bottom: 1.5rem;
+}
+
+.reviews-list {
+  margin-top: 2rem;
+}
+
+.review {
+  background-color: var(--vintage-light);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Darker box-shadow */
+}
+
+.review p {
+  margin: 0.5rem 0;
 }

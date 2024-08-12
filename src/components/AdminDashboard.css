@@ -1,0 +1,148 @@
+/* AdminDashboard.css */
+
+.admin-dashboard-container {
+    background-color: #f9f3e5;
+    /* Light vintage background */
+    padding: 30px;
+    font-family: 'Georgia', serif;
+    /* Vintage font */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.admin-dashboard-title {
+    text-align: center;
+    color: #6b4f28;
+    /* Darker vintage color */
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #8a5d3b;
+    padding-bottom: 10px;
+}
+
+.admin-section {
+    margin-bottom: 40px;
+}
+
+.admin-list-toggle-button {
+    background-color: #8a5d3b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-list-toggle-button:hover {
+    background-color: #7a4c2a;
+    transform: scale(1.05);
+}
+
+.admin-items-container,
+.admin-users-container,
+.admin-reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.admin-item-card,
+.admin-user-card,
+.admin-review-card {
+    background-color: #ffffff;
+    border: 1px solid #d3bfa5;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    /* Adjust to fit horizontally */
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.admin-item-card:hover,
+.admin-user-card:hover,
+.admin-review-card:hover {
+    transform: translateY(-5px);
+}
+
+.admin-item-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.admin-item-name,
+.admin-user-name,
+.admin-review-name {
+    color: #6b4f28;
+    /* Vintage color */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.admin-item-price,
+.admin-item-category,
+.admin-review-rating {
+    color: #8a5d3b;
+    /* Vintage color */
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.admin-item-description,
+.admin-review-message {
+    color: #5f4b3a;
+    /* Dark vintage text color */
+    font-size: 1rem;
+}
+
+.admin-item-actions,
+.admin-user-actions,
+.admin-review-actions {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.admin-item-button,
+.admin-user-button,
+.admin-review-button {
+    background-color: #8a5d3b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.admin-item-button:hover,
+.admin-user-button:hover,
+.admin-review-button:hover {
+    background-color: #7a4c2a;
+    transform: scale(1.05);
+}
+
+.admin-item-bids ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-item-bids li {
+    padding: 10px 0;
+    border-bottom: 1px solid #d3bfa5;
+    color: #5f4b3a;
+    font-size: 1rem;
+}
